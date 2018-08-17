@@ -4,8 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -20,7 +18,7 @@ public class Pizza {
     private BigDecimal price;
 
     @Column(name = "available")
-    private Boolean isAvailable;
+    private Boolean available;
 
     public Pizza() {}
 
@@ -28,7 +26,7 @@ public class Pizza {
         this.name = name;
         this.ingredients = ingredients;
         this.price = price;
-        this.isAvailable = isAvailable;
+        this.available = isAvailable;
     }
 
     public Long getId() {
@@ -36,6 +34,6 @@ public class Pizza {
     }
 
     public Boolean getAvailable() {
-        return isAvailable;
+        return available;
     }
 }

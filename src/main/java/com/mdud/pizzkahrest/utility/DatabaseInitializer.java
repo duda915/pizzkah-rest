@@ -46,6 +46,13 @@ public class DatabaseInitializer implements CommandLineRunner {
                     new Pizza(name, "Cheese", new BigDecimal(26.33), true)
             );
         });
+
+        Arrays.asList("Old pizza", "Old cheese pizza").forEach(name -> {
+            Pizza pizza = pizzaRepository.save(
+                    new Pizza(name, "Paprika", new BigDecimal(22.43), false)
+            );
+        });
+
         Pizza pizza = pizzaRepository.findDistinctByName("Cheese pizza").get();
         pizzaOrder.getOrderDataList().add(new OrderData(pizzaOrder, pizza));
         pizza = pizzaRepository.findDistinctByName("Ham pizza").get();
