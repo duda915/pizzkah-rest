@@ -1,9 +1,6 @@
-package com.mdud.pizzkahrest.datamodel;
-
-import lombok.Data;
+package com.mdud.pizzkahrest.datamodel.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

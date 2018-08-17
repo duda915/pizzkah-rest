@@ -1,12 +1,12 @@
 package com.mdud.pizzkahrest.utility;
 
-import com.mdud.pizzkahrest.datamodel.Manager;
-import com.mdud.pizzkahrest.datamodel.OrderData;
-import com.mdud.pizzkahrest.datamodel.Pizza;
-import com.mdud.pizzkahrest.datamodel.PizzaOrder;
-import com.mdud.pizzkahrest.repositories.ManagerRepository;
-import com.mdud.pizzkahrest.repositories.PizzaOrderRepository;
-import com.mdud.pizzkahrest.repositories.PizzaRepository;
+import com.mdud.pizzkahrest.datamodel.entity.Manager;
+import com.mdud.pizzkahrest.datamodel.entity.OrderData;
+import com.mdud.pizzkahrest.datamodel.entity.Pizza;
+import com.mdud.pizzkahrest.datamodel.entity.PizzaOrder;
+import com.mdud.pizzkahrest.datamodel.repository.ManagerRepository;
+import com.mdud.pizzkahrest.datamodel.repository.PizzaOrderRepository;
+import com.mdud.pizzkahrest.datamodel.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

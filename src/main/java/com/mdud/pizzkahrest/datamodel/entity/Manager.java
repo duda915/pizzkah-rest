@@ -1,4 +1,4 @@
-package com.mdud.pizzkahrest.datamodel;
+package com.mdud.pizzkahrest.datamodel.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

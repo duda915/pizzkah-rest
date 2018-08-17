@@ -1,4 +1,4 @@
-package com.mdud.pizzkahrest.datamodel;
+package com.mdud.pizzkahrest.datamodel.entity;
 
 import lombok.Data;
 
@@ -33,5 +33,9 @@ public class Pizza {
 
     public Long getId() {
         return id;
+    }
+
+    public Boolean getAvailable() {
+        return isAvailable;
     }
 }

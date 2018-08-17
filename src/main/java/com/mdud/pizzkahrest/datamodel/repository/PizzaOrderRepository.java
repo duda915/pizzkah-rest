@@ -1,6 +1,6 @@
-package com.mdud.pizzkahrest.repositories;
+package com.mdud.pizzkahrest.datamodel.repository;
 
-import com.mdud.pizzkahrest.datamodel.PizzaOrder;
+import com.mdud.pizzkahrest.datamodel.entity.PizzaOrder;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PizzaOrderRepository extends CrudRepository<PizzaOrder, Long> {

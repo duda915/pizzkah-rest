@@ -1,6 +1,6 @@
-package com.mdud.pizzkahrest.repositories;
+package com.mdud.pizzkahrest.datamodel.repository;
 
-import com.mdud.pizzkahrest.datamodel.Manager;
+import com.mdud.pizzkahrest.datamodel.entity.Manager;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

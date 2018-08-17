@@ -1,6 +1,6 @@
-package com.mdud.pizzkahrest.repositories;
+package com.mdud.pizzkahrest.datamodel.repository;
 
-import com.mdud.pizzkahrest.datamodel.Pizza;
+import com.mdud.pizzkahrest.datamodel.entity.Pizza;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
