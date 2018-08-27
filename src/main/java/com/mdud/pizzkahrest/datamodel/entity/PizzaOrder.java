@@ -1,6 +1,7 @@
 package com.mdud.pizzkahrest.datamodel.entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,8 @@ public class PizzaOrder {
     @OneToMany(mappedBy = "pizzaOrder", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderData> orderDataList = new ArrayList<>();
 
+    @Transient
+    private BigDecimal totalPrice = new BigDecimal(0);
 
     public PizzaOrder() {}
 
@@ -105,5 +108,19 @@ public class PizzaOrder {
 
     public void setOrderDataList(List<OrderData> orderDataList) {
         this.orderDataList = orderDataList;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public void calculateTotalPrice() {
+        totalPrice = new BigDecimal(0);
+        for(OrderData od : orderDataList)
+            totalPrice = totalPrice.add(od.getPizza().getPrice());
     }
 }

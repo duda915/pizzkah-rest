@@ -19,11 +19,28 @@ public class PizzaOrderRestController {
     @Autowired
     private PizzaOrderRepository pizzaOrderRepository;
 
+
     @GetMapping
     public List<PizzaOrder> getPendingOrders() {
         List<PizzaOrder> pizzaOrders = new ArrayList<>();
 
         pizzaOrderRepository.findAllByDoneFalse().forEach(pizzaOrder -> {
+
+            pizzaOrder.calculateTotalPrice();
+            pizzaOrders.add(pizzaOrder);
+
+        });
+
+        return pizzaOrders;
+    }
+
+    @GetMapping("/completed")
+    public List<PizzaOrder> getCompletedOrders() {
+        List<PizzaOrder> pizzaOrders = new ArrayList<>();
+
+        pizzaOrderRepository.findAllByDoneTrue().forEach(pizzaOrder -> {
+
+            pizzaOrder.calculateTotalPrice();
             pizzaOrders.add(pizzaOrder);
         });
 

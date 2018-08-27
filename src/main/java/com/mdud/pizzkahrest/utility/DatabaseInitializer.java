@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
+// Example data, deleting this data can cause tests to fail
 @Component
 public class DatabaseInitializer implements CommandLineRunner {
 
@@ -53,6 +54,7 @@ public class DatabaseInitializer implements CommandLineRunner {
             );
         });
 
+        //Test pending order
         Pizza pizza = pizzaRepository.findDistinctByName("Cheese pizza").get();
         pizzaOrder.getOrderDataList().add(new OrderData(pizzaOrder, pizza));
         pizza = pizzaRepository.findDistinctByName("Ham pizza").get();
@@ -63,6 +65,16 @@ public class DatabaseInitializer implements CommandLineRunner {
         pizzaOrder.getOrderDataList().add(new OrderData(pizzaOrder, pizza));
         pizzaOrderRepository.save(pizzaOrder);
 
+        //Test done order
+        pizzaOrder = new PizzaOrder(new Date(), "Sam", "White",
+                "777777777", "Cracow", true);
+        pizza = pizzaRepository.findDistinctByName("Cheese pizza").get();
+        pizzaOrder.getOrderDataList().add(new OrderData(pizzaOrder, pizza));
+        pizza = pizzaRepository.findDistinctByName("Ham pizza").get();
+        pizzaOrder.getOrderDataList().add(new OrderData(pizzaOrder, pizza));
+        pizzaOrderRepository.save(pizzaOrder);
+
+        //Test manager
         Manager manager = managerRepository.save(new Manager("username", "password",
                 "all"));
     }
