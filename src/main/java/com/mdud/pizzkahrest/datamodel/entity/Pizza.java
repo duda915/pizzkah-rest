@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "pizza")
-public class Pizza {
+public class Pizza  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
