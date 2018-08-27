@@ -25,7 +25,7 @@ public class PizzaOrder {
     private String address;
 
     @Column(name = "done")
-    private Boolean isDone;
+    private Boolean done;
 
     @OneToMany(mappedBy = "pizzaOrder", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderData> orderDataList = new ArrayList<>();
@@ -40,7 +40,7 @@ public class PizzaOrder {
         this.customerLastName = customerLastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.isDone = isDone;
+        this.done = isDone;
     }
 
     public Long getId() {
@@ -92,11 +92,11 @@ public class PizzaOrder {
     }
 
     public Boolean getDone() {
-        return isDone;
+        return done;
     }
 
     public void setDone(Boolean done) {
-        isDone = done;
+        this.done = done;
     }
 
     public List<OrderData> getOrderDataList() {
