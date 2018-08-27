@@ -1,5 +1,6 @@
 package com.mdud.pizzkahrest;
 
+import com.mdud.pizzkahrest.datamodel.repository.PizzaOrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,7 @@
 package com.mdud.pizzkahrest.datamodel.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +13,7 @@ public class OrderData {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
+    @JsonIgnore
     private PizzaOrder pizzaOrder;
 
     @ManyToOne
