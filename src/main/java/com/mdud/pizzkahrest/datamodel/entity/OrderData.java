@@ -11,7 +11,7 @@ public class OrderData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "order_id")
     @JsonIgnore
     private PizzaOrder pizzaOrder;
